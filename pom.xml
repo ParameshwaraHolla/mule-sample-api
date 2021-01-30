@@ -16,11 +16,7 @@
 
 		<app.runtime>4.3.0</app.runtime>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
-		
-		<mule.deploy.env>Sandbox</mule.deploy.env>
-		<mule.env.name>sandbox</mule.env.name>
-		<mule.app.version>v1</mule.app.version>
-		
+				
 	</properties>
 
 	<build>
@@ -43,14 +39,14 @@
 						<password>${cloudhub.password}</password>
 						<applicationName>${mule.env.name}-mule-sample-api-${mule.app.version}</applicationName>
 						<environment>${mule.deploy.env}</environment>
-						<workerType>MICRO</workerType>
+						<workerType>${vCoreType}</workerType>
                         <objectStoreV2>true</objectStoreV2>
 						<properties>
-							<anypoint.platform.client_id>${client.id}</anypoint.platform.client_id>
+							<!--<anypoint.platform.client_id>${client.id}</anypoint.platform.client_id>
 							<anypoint.platform.client_secret>${client.secret}</anypoint.platform.client_secret>
-							<secretKey>${secretKey}</secretKey>
+							<secretKey>${secretKey}</secretKey>-->
 							<env>${mule.env.name}</env>
-						</properties>                        
+						</properties>                       
                     </cloudHubDeployment>
                 </configuration>
             </plugin>
